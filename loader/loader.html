@@ -1,75 +1,15 @@
 <!-- https://css-tricks.com/gradient-borders-in-css/ -->
 <html>
-<style>
-	.loader {
-		height: 140px;
-		position: relative;
-	}
-
-	.loader > .big-spinner {
-	  position: absolute;
-	  border: 4px solid transparent;
-	  border-top: 4px solid #3498db;
-	  border-radius: 50%;
-	  width: 120px;
-	  height: 120px;
-	  animation: spin 3s ease-in-out infinite;
-	}
-
-	.loader > .middle-spinner {
-	  left: 10px;
-	  top: 10px;
-	  position: absolute;
-	  border: 4px solid transparent;
-	  border-top: 4px solid #3498db;
-	  border-radius: 50%;
-	  width: 100px;
-	  height: 100px;
-	  animation: spin 2s ease-in-out infinite;
-	}
-
-	.loader > .small-spinner {
-	  left: 20px;
-	  top: 20px;
-	  position: absolute;
-	  border: 4px solid transparent;
-	  border-top: 4px solid #3498db;
-	  border-radius: 50%;
-	  width: 80px;
-	  height: 80px;
-	  animation: spin 1s ease-in-out infinite;
-	}
-
-	.svg-loader svg circle {
-		stroke-dasharray: 230;
-		stroke-dashoffset: 70;
-		stroke-linecap: round;
-  		transform-origin: 50% 50%;
-	}
-
-	.svg-loader .loader-small-circle {
-		animation: spin 1s linear infinite;
-	}
-
-	.svg-loader .loader-middle-circle {
-		animation: spin 2s linear infinite;
-	}
-
-	.svg-loader .loader-big-circle {
-		animation: spin 3s linear infinite;
-	}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); transform-origin: 50% 50%; }
-  100% { transform: rotate(360deg); transform-origin: 50% 50%;}
-}
-</style>	
+<link rel="stylesheet" href="style.css"/>
 <body>
+	<h1>Spinner</h1>
+	<h2>Borders</h1>
 	<div class="loader">
 		<div class="big-spinner"></div>
 		<div class="middle-spinner"></div>
 		<div class="small-spinner"></div>
 	</div>
+	<h2>SVG</h2>
 	<!-- https://glennmccomb.com/articles/building-a-pure-css-animated-svg-spinner -->
 	<div class="svg-loader">
 		<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
