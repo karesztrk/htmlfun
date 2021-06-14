@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinner</title>
+    <link rel="stylesheet" href="./styles.css"> 
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+
+.dot-hourglass {
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+
+.before, .after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: black;
+  color: transparent;
+}
+
+.before::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: black;
+  color: transparent;
+  left: 30px;
+  animation: dot-hourglass-before-before 1.7s infinite linear;
+}
+
+.after::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: black;
+  color: transparent;
+  left: -30px;
+  animation: dot-hourglass-after-after 1.7s infinite linear;
+}
+
+.before {
+  left: -30px;
+  transform-origin: 20px 5px;
+  animation: dot-hourglass-before 1.7s infinite ease-in-out;
+}
+
+.after {
+  left: 30px;
+  transform-origin: -10px 5px;
+  animation: dot-hourglass-after 1.7s infinite ease-in-out;
+}
+
+@keyframes dot-hourglass-before {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes dot-hourglass-before-before {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot-hourglass-after-after {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-hourglass-after {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="dot-hourglass">
+        <span class="before"></span>
+        <span class="after"></span>
+    </div>
+</body>
+</html>
